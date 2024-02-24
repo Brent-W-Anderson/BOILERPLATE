@@ -1,5 +1,0 @@
-{
-    "extends": "stylelint-config-standard-scss",
-    "rules": {},
-    "ignoreFiles": ["dist/**", "node_modules/**"]
-}
