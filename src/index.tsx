@@ -1,16 +1,15 @@
-import { createSignal, Component } from 'solid-js'
+import { Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
-
-const App: Component = () => {
-	const [count, setCount] = createSignal(0)
-
-	return (
-		<>
-			<h1>{count()}</h1>
-			<button onClick={() => setCount(count() + 1)}>Increment</button>
-		</>
-	)
-}
+import { Nav } from './App/Nav/Nav'
+import { Pages } from './App/Pages/Pages'
+import './index.scss'
 
 const root = document.getElementById('app') as HTMLElement
-render(() => <App />, root)
+
+const App = () => (
+    <Router root={Nav}>
+        <Pages />
+    </Router>
+)
+
+render(App, root)
